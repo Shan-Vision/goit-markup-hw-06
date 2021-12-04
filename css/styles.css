@@ -283,6 +283,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 40px;
   min-width: 528px;
   min-height: 581px;
 
@@ -292,7 +293,7 @@ body {
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .modal-title {
-  margin: 40px 40px 12px;
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -300,8 +301,9 @@ body {
 
   color: var(--modal-title-color);
 }
+/* -------------------------------Modal Form ----------- */
 .modal-box {
-  margin: 0 40px;
+  margin: 0;
   padding: 0;
 }
 .modal-form-box {
@@ -310,7 +312,7 @@ body {
   align-items: start;
   width: 100%;
 }
-.modal-box input {
+.modal-input {
   padding-left: 42px;
   width: 100%;
   height: 40px;
@@ -318,7 +320,7 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-color: inherit;
 }
-.modal-box label {
+.modal-label {
   padding-bottom: 4px;
   font-weight: normal;
   font-size: 12px;
@@ -327,7 +329,7 @@ body {
 
   color: var(--modal-text-color);
 }
-.modal-box textarea {
+.modal-area-comment {
   margin-bottom: 20px;
   padding: 12px 16px;
   width: 100%;
@@ -336,6 +338,10 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   resize: none;
 }
+.modal-area-comment:hover,
+.modal-area-comment:focus {
+  border-color: var(--accent-color);
+}
 .modal-box .modal-form-box + .modal-form-box {
   margin-top: 10px;
 }
@@ -343,15 +349,18 @@ body {
   position: relative;
   width: 100%;
   color: var(--modal-icon-input-color);
-  cursor: pointer;
   border-color: rgba(33, 33, 33, 0.2);
 }
-.modal-form-box .box-icon-input:hover,
+
+.box-icon-input:hover,
 .box-icon-input:focus {
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
-
+.box-icon-input.curent {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
 .modal-icon-svg {
   position: absolute;
   top: 50%;
@@ -361,27 +370,60 @@ body {
   height: 13px;
   fill: currentColor;
 }
+/**------------ Checkbox */
 .modal-form-checkbox {
-  display: flex;
-  width: 425px;
-  margin-left: 12px;
   margin-bottom: 30px;
 }
-.modal-box input[type='checkbox'] {
-  margin: 5px 8px 5px 0;
-  padding: 0;
-  width: 16px;
+.modal-policy-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 15px;
-}
-
-.modal-form-checkbox .modal-policy-text {
-  padding-bottom: 0;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-
-  color: var(--modal-text-color);
 }
+.modal-input-policy {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.border-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+/* *---------скачать правильный свг для чекбокса */
+.modal-input-policy:checked + .border-checkbox {
+  background-image: url(../images/checkbox/checkbox-icon.svg);
+  background-color: var(--accent-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+}
+
+/* .checkbox-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+
+  width: 16px;
+  height: 15px;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  background-origin: border-box;
+} */
+.modal-input-policy:checked + .checkbox-icon {
+  opacity: 1;
+}
+
 .modal-policy-link {
   color: var(--modal-policy-link);
   text-decoration: underline;
@@ -389,9 +431,8 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration-skip-ink: none;
+  margin-left: 3px;
 }
-/* .modal-form-checkbox .modal-input-policy{
-} */
 .modal-button-submit {
   width: 200px;
   height: 50px;
@@ -800,7 +841,14 @@ body {
   margin: 11px;
 }
 /* -------------------------------Fotter Sign-up */
+.container-sign-up {
+  margin-left: 93px;
+  display: flex;
+  align-items: flex-end;
+}
+
 .sign-up-label {
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.15;
@@ -810,22 +858,49 @@ body {
   color: var(--primary-white-color);
 }
 .sign-up-input {
+  width: 358px;
+  height: 50px;
+
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  height: 50px;
+  background-color: transparent;
 }
 .sign-up-box {
   display: flex;
   flex-direction: column;
-
-  outline: 1px solid red;
 }
 .sugn-up-form {
   display: flex;
   width: 358px;
 }
+.sign-up-button {
+  margin-left: 12px;
+  width: 200px;
+  height: 50px;
+  color: #ececec;
+}
+.sign-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  border: none;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+}
 .sign-up-button-icon {
   width: 24px;
   height: 24px;
+  fill: currentColor;
 }
