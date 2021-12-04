@@ -20,6 +20,7 @@
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --work-overlay-bgc-color: rgba(47, 48, 58, 0.8);
   --modal-title-color: #212121;
+  --modal-icon-input-color: #212121;
   --modal-text-color: #757575;
   --modal-comment-placeholder: rgba(117, 117, 117, 0.5);
   --modal-policy-link: #2196f3;
@@ -268,8 +269,6 @@ body {
 
   background-color: rgba(0, 0, 0, 0.2);
 
-  /* transform: scale(100%);
-  transition: transform 250ms var(--timing-function), visibility 250ms var(--timing-function); */
   opacity: 1;
   visibility: visible;
   transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
@@ -278,7 +277,6 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  /* transform: scale(0); */
 }
 .modal {
   position: fixed;
@@ -313,12 +311,12 @@ body {
   width: 100%;
 }
 .modal-box input {
-  margin-bottom: 10px;
-  padding: 0 42px;
+  padding-left: 42px;
   width: 100%;
   height: 40px;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
+  border-color: inherit;
 }
 .modal-box label {
   padding-bottom: 4px;
@@ -338,17 +336,35 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   resize: none;
 }
-/* TODO --------------------------------------------------------------Placeholder */
-/* .modal-box textarea[placeholder]{
-font-size: 12px;
-line-height: 1.16;
-letter-spacing: 0.01em;
+.modal-box .modal-form-box + .modal-form-box {
+  margin-top: 10px;
+}
+.box-icon-input {
+  position: relative;
+  width: 100%;
+  color: var(--modal-icon-input-color);
+  cursor: pointer;
+  border-color: rgba(33, 33, 33, 0.2);
+}
+.modal-form-box .box-icon-input:hover,
+.box-icon-input:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
 
-color: var(--modal-comment-placeholder);
-} */
+.modal-icon-svg {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
 .modal-form-checkbox {
   display: flex;
-  width: 100%;
+  width: 425px;
+  margin-left: 12px;
   margin-bottom: 30px;
 }
 .modal-box input[type='checkbox'] {
@@ -357,7 +373,10 @@ color: var(--modal-comment-placeholder);
   width: 16px;
   height: 15px;
 }
-.modal-policy-text {
+
+.modal-form-checkbox .modal-policy-text {
+  padding-bottom: 0;
+  font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 
@@ -369,7 +388,10 @@ color: var(--modal-comment-placeholder);
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  text-decoration-skip-ink: none;
 }
+/* .modal-form-checkbox .modal-input-policy{
+} */
 .modal-button-submit {
   width: 200px;
   height: 50px;
@@ -377,10 +399,12 @@ color: var(--modal-comment-placeholder);
   color: var(--modal-button-submit-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+  cursor: pointer;
 }
 .close {
   position: absolute;
@@ -395,15 +419,16 @@ color: var(--modal-comment-placeholder);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
 
-  transition: border-color 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 .close:hover,
 .close:focus {
-  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 .icon-button {
   width: 100%;
   height: 100%;
+  fill: currentColor;
 }
 
 /* -------------------------------Особенности */
@@ -773,4 +798,34 @@ color: var(--modal-comment-placeholder);
   height: 22px;
   fill: currentColor;
   margin: 11px;
+}
+/* -------------------------------Fotter Sign-up */
+.sign-up-label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+}
+.sign-up-input {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  height: 50px;
+}
+.sign-up-box {
+  display: flex;
+  flex-direction: column;
+
+  outline: 1px solid red;
+}
+.sugn-up-form {
+  display: flex;
+  width: 358px;
+}
+.sign-up-button-icon {
+  width: 24px;
+  height: 24px;
 }
