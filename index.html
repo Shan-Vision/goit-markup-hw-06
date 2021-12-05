@@ -43,11 +43,11 @@
             <div class="backdrop is-hidden" data-modal>
                <div class="modal">
                   <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-                  <form action="" class="modal-form" autocomplete="off">
+                  <form action="" class="modal-form" autocomplete="on">
                      <div class="modal-box">
                         <div class="modal-form-box">
-                           <label for="user-name" class="modal-label label-name">Имя</label>
-                           <div class="box-icon-input curent">
+                           <label for="user-name" class="modal-label">Имя</label>
+                           <div class="box-icon-input">
                               <input type="text" name="user-name" id="user-name" class="modal-input">
                               <svg class="modal-icon-svg">
                                  <use href="./images/modal-icon/symbol-defs.svg#icon-name"></use>
@@ -55,31 +55,34 @@
                            </div>
                         </div>
                         <div class="modal-form-box">
-                           <label for="user-tel" class="modal-label label-tel">Телефон</label>
+                           <label for="user-tel" class="modal-label">Телефон</label>
                            <div class="box-icon-input">
-                           <input type="tel" name="user-tel" id="user-tel" class="modal-input input-tel">
+                           <input type="tel" name="user-tel" id="user-tel" class="modal-input">
                            <svg class="modal-icon-svg">
                               <use href="./images/modal-icon/symbol-defs.svg#icon-tel"></use>
                            </svg>
                            </div>
                         </div>
                         <div class="modal-form-box">
-                           <label for="user-mail" class="modal-label label-mail">Почта</label>
+                           <label for="user-mail" class="modal-label">Почта</label>
                            <div class="box-icon-input">
-                              <input type="mail" name="user-mail" id="user-mail" class="modal-input input-mail">
+                              <input type="mail" name="user-mail" id="user-mail" class="modal-input">
                               <svg class="modal-icon-svg">
                                  <use href="./images/modal-icon/symbol-defs.svg#icon-mail"></use>
                               </svg>
                            </div>
                         </div>
                         <div class="modal-form-box">
-                           <label for="user-comment" class="modal-label label-comment">Комментарий</label>
+                           <label for="user-comment" class="modal-label">Комментарий</label>
                            <textarea name="user-comment" id="user-comment" cols="30" rows="10" placeholder="Введите текст" class="modal-area-comment"></textarea>
                         </div>
                         <div class="modal-form-checkbox">
-                           <label  class="modal-policy-text">
-                              <input type="checkbox" name="user-policy" class="modal-input-policy">
-                              <span class="border-checkbox"></span>                           
+                           <input type="checkbox" name="user-policy" id="user-policy"class="modal-input-policy visually-hidden">
+                           <label for="user-policy" class="modal-policy-text"><span class="border-checkbox">
+                                 <svg class="icon-check" width="16" height="15">
+                                    <use href="./images/checkbox/checkbox-icon.svg#icon-check"></use>
+                                 </svg>
+                              </span>                           
                               Соглашаюсь с рассылкой и принимаю
                               <a href="#" class="modal-policy-link">Условия договора</a>
                            </label>
