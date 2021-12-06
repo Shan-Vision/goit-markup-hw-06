@@ -40,63 +40,6 @@
          <section class="section main">
             <h1 class="main-title">Эффективные решения для вашего бизнеса</h1>
             <button class="main-button" type="button" data-modal-open>Заказать услугу</button>
-            <div class="backdrop is-hidden" data-modal>
-               <div class="modal">
-                  <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-                  <form action="" class="modal-form" autocomplete="on">
-                     <div class="modal-box">
-                        <div class="modal-form-box">
-                           <label for="user-name" class="modal-label">Имя</label>
-                           <div class="box-icon-input">
-                              <input type="text" name="user-name" id="user-name" class="modal-input">
-                              <svg class="modal-icon-svg">
-                                 <use href="./images/modal-icon/symbol-defs.svg#icon-name"></use>
-                              </svg>
-                           </div>
-                        </div>
-                        <div class="modal-form-box">
-                           <label for="user-tel" class="modal-label">Телефон</label>
-                           <div class="box-icon-input">
-                           <input type="tel" name="user-tel" id="user-tel" class="modal-input">
-                           <svg class="modal-icon-svg">
-                              <use href="./images/modal-icon/symbol-defs.svg#icon-tel"></use>
-                           </svg>
-                           </div>
-                        </div>
-                        <div class="modal-form-box">
-                           <label for="user-mail" class="modal-label">Почта</label>
-                           <div class="box-icon-input">
-                              <input type="mail" name="user-mail" id="user-mail" class="modal-input">
-                              <svg class="modal-icon-svg">
-                                 <use href="./images/modal-icon/symbol-defs.svg#icon-mail"></use>
-                              </svg>
-                           </div>
-                        </div>
-                        <div class="modal-form-box">
-                           <label for="user-comment" class="modal-label">Комментарий</label>
-                           <textarea name="user-comment" id="user-comment" cols="30" rows="10" placeholder="Введите текст" class="modal-area-comment"></textarea>
-                        </div>
-                        <div class="modal-form-checkbox">
-                           <input type="checkbox" name="user-policy" id="user-policy"class="modal-input-policy visually-hidden">
-                           <label for="user-policy" class="modal-policy-text"><span class="border-checkbox">
-                                 <svg class="icon-check" width="16" height="15">
-                                    <use href="./images/checkbox/checkbox-icon.svg#icon-check"></use>
-                                 </svg>
-                              </span>                           
-                              Соглашаюсь с рассылкой и принимаю
-                              <a href="#" class="modal-policy-link">Условия договора</a>
-                           </label>
-                        </div>
-                     </div>
-                  </form>
-                  <button type="submit" class="modal-button-submit">Отправить</button>
-                  <button class="close" data-modal-close>
-                     <svg class="icon-button">
-                        <use href="./images/modal-icon/symbol-defs.svg#icon-close-black"></use>
-                     </svg>
-                  </button>
-               </div>
-            </div>
          </section>
       <!-- -----------------------------------------------Особенности -->
       <section class="section features">
@@ -436,10 +379,68 @@
                      <use href="./images/modal-icon/symbol-defs.svg#icon-sign-up"></use>
                   </svg></button> 
                </div>
-           
         </div>
       </div>
    </footer>
+            <div class="backdrop is-hidden" data-modal>
+               <div class="modal">
+                  <button class="close" data-modal-close>
+                     <svg class="icon-button">
+                        <use href="./images/modal-icon/symbol-defs.svg#icon-close-black"></use>
+                     </svg>
+                  </button>
+                  <button type="submit" class="modal-button-submit">Отправить</button>
+                  <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+                  <form action="" class="modal-form" autocomplete="on">
+                     <div class="modal-box">
+                        <div class="modal-form-box">
+                           <label for="user-name" class="modal-label">Имя</label>
+                           <div class="box-icon-input">
+                              <input type="text" name="user-name" id="user-name" class="modal-input">
+                              <svg class="modal-icon-svg">
+                                 <use href="./images/modal-icon/symbol-defs.svg#icon-name"></use>
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="modal-form-box">
+                           <label for="user-tel" class="modal-label">Телефон</label>
+                           <div class="box-icon-input">
+                              <input type="tel" name="user-tel" id="user-tel" class="modal-input">
+                              <svg class="modal-icon-svg">
+                                 <use href="./images/modal-icon/symbol-defs.svg#icon-tel"></use>
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="modal-form-box">
+                           <label for="user-mail" class="modal-label">Почта</label>
+                           <div class="box-icon-input">
+                              <input type="mail" name="user-mail" id="user-mail" class="modal-input">
+                              <svg class="modal-icon-svg">
+                                 <use href="./images/modal-icon/symbol-defs.svg#icon-mail"></use>
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="modal-form-box">
+                           <label for="user-comment" class="modal-label">Комментарий</label>
+                           <textarea name="user-comment" id="user-comment" cols="30" rows="10" placeholder="Введите текст"
+                              class="modal-area-comment"></textarea>
+                        </div>
+                        <div class="modal-form-checkbox">
+                           <input type="checkbox" name="user-policy" id="user-policy" class="modal-input-policy visually-hidden">
+                           <label for="user-policy" class="modal-policy-text"><span class="border-checkbox">
+                                 <svg class="icon-check" width="16" height="15">
+                                    <use href="./images/checkbox/checkbox-icon.svg#icon-check"></use>
+                                 </svg>
+                              </span>
+                              Соглашаюсь с рассылкой и принимаю
+                              <a href="#" class="modal-policy-link">Условия договора</a>
+                           </label>
+                        </div>
+                     </div>
+                  </form> 
+               </div>
+            </div>
+
    <script src="./js/modal.js"></script>
  </body>
 </html>

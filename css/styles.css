@@ -225,7 +225,7 @@ body {
     url('../images/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-color: var(--header-bgc-color);
 }
 
@@ -307,12 +307,15 @@ body {
   margin: 0;
   padding: 0;
 }
-.modal-form-box {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 100%;
+.modal-box :nth-child(4){
+  margin-bottom: 20px;
 }
+.modal-form-box {
+  /* display: block; */
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .modal-input {
   padding-left: 42px;
   width: 100%;
@@ -325,6 +328,7 @@ body {
   transition: border-color 250ms var(--timing-function);
 }
 .modal-label {
+  display: block;
   padding-bottom: 4px;
   font-weight: normal;
   font-size: 12px;
@@ -334,7 +338,6 @@ body {
   color: var(--modal-text-color);
 }
 .modal-area-comment {
-  margin-bottom: 20px;
   padding: 12px 16px;
   width: 100%;
   height: 120px;
@@ -348,22 +351,19 @@ body {
 .modal-area-comment:focus {
   border-color: var(--accent-color);
 }
-.modal-box .modal-form-box + .modal-form-box {
-  margin-top: 10px;
-}
+
 .box-icon-input {
   position: relative;
   width: 100%;
 
   color: var(--modal-icon-input-color);
-
 }
 
 .modal-input:focus {
   border-color: var(--accent-color);
 }
-.modal-input:focus + .modal-icon-svg{
-  fill: var(--accent-color)
+.modal-input:focus + .modal-icon-svg {
+  fill: var(--accent-color);
 }
 
 .modal-icon-svg {
@@ -388,14 +388,10 @@ body {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
- 
 }
-/* .modal-input-policy {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  position: absolute;
-} */
+.modal-input-policy {
+  cursor: pointer;
+}
 .border-checkbox {
   display: flex;
   justify-content: center;
@@ -406,18 +402,23 @@ body {
   border-radius: 2px;
   margin-right: 8px;
 
-  transition: background-color 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function),
+    border-color 250ms var(--timing-function);
 }
-.icon-check{
-  fill:transparent;
+.icon-check {
+  fill: transparent;
+}
+.modal-input-policy:focus + .modal-policy-text .border-checkbox,
+.modal-input-policy:hover + .modal-policy-text .border-checkbox {
+  border-color: #2196f3;
 }
 
 .modal-input-policy:checked + .modal-policy-text .border-checkbox {
-  background-color:var(--accent-color);
+  background-color: var(--accent-color);
   border: none;
 }
-.modal-input-policy:checked + .modal-policy-text .icon-check{
-fill: var(--primary-white-color);
+.modal-input-policy:checked:focus + .modal-policy-text .icon-check {
+  fill: var(--primary-white-color);
 }
 .modal-policy-link {
   color: var(--modal-policy-link);
@@ -429,13 +430,19 @@ fill: var(--primary-white-color);
   margin-left: 3px;
 }
 .modal-button-submit {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
   width: 200px;
   height: 50px;
+
   background-color: var(--accent-color);
   color: var(--modal-button-submit-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -580,13 +587,12 @@ fill: var(--primary-white-color);
 }
 .team-box {
   background-color: var(--primary-white-color);
-  padding: 30px 0;
+  padding: 30px 32px;
   text-align: center;
   border-radius: 0px 0px 4px 4px;
 }
 .team-icon-list {
   display: flex;
-  margin: 0 32px;
 }
 
 .team-icon-list .team-icon-item + .team-icon-item {
@@ -813,7 +819,9 @@ fill: var(--primary-white-color);
   display: flex;
 }
 .join-link {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -833,13 +841,13 @@ fill: var(--primary-white-color);
   width: 22px;
   height: 22px;
   fill: currentColor;
-  margin: 11px;
 }
 /* -------------------------------Fotter Sign-up */
 .container-sign-up {
   margin-left: 93px;
   display: flex;
   align-items: flex-end;
+  flex-grow: 1;
 }
 
 .sign-up-label {
@@ -855,11 +863,13 @@ fill: var(--primary-white-color);
 .sign-up-input {
   width: 358px;
   height: 50px;
+  padding-left: 16px;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: transparent;
+  color: var(--primary-white-color);
 }
 .sign-up-box {
   display: flex;
